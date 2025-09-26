@@ -66,3 +66,66 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+ /* codice copiato da chat per ottimizzare l'interfaccia */
+ /* styles minimal per Spyfall prototype */
+.btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary {
+  background: #2563eb;
+  color: #fff;
+  border-color: rgba(37,99,235,0.9);
+}
+.btn.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+.btn.large { padding: 12px 18px; font-size: 16px; border-radius: 10px; }
+
+input.input, select {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+.modal {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  width: 92%;
+  max-width: 420px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+/* timer styling */
+.timer {
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+.timer.running { background: #e6f2ff; border: 1px solid #bfe0ff; }
+.timer.warn { background: #fff4f2; border: 1px solid #ffc9be; color: #b03a2e; }
+
+/* responsive adjustments */
+@media (max-width: 820px) {
+  .setup { grid-template-columns: 1fr; }
+  .modal { width: 95%; }
+}
+
