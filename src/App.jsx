@@ -58,6 +58,7 @@ function App() {
   const [newScenarioName, setNewScenarioName] = useState("");
   const [newRoles, setNewRoles] = useState("");
   const [timerInput, setTimerInput] = useState(5);
+  const [tempPlayerName, setTempPlayerName] = useState(""); // <--- AGGIUNGI QUESTA RIGA
 
   // Modal control
   const [modalOpen, setModalOpen] = useState(false);
@@ -274,15 +275,31 @@ function App() {
 
                 <div className="card" style={{ marginBottom: 20 }}>
                   <h2>1. Giocatori ({players.length})</h2>
-                  <div className="input-group">
+                  <div className="input-group" style={{ display: 'flex', gap: '8px' }}>
                     <input
                       className="input"
                       type="text"
-                      placeholder="Scrivi nome e premi Invio..."
+                      placeholder="Nome giocatore..."
+                      value={tempPlayerName}
+                      onChange={(e) => setTempPlayerName(e.target.value)}
                       onKeyDown={(e) => {
-                        if (e.key === "Enter") { addPlayer(e.target.value); e.target.value = ""; }
+                        if (e.key === "Enter") {
+                          addPlayer(tempPlayerName);
+                          setTempPlayerName("");
+                        }
                       }}
+                      style={{ flex: 1 }}
                     />
+                    <button 
+                      className="btn primary" 
+                      style={{ width: 'auto', padding: '0 16px' }}
+                      onClick={() => {
+                        addPlayer(tempPlayerName);
+                        setTempPlayerName("");
+                      }}
+                    >
+                      Aggiungi
+                    </button>
                   </div>
                   <ul className="player-list">
                     {players.map((p, i) => (
