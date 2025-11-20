@@ -5,6 +5,7 @@
     <link rel="icon" href="/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mole Hunt</title>
+    
     <link rel="apple-touch-icon" href="/icon.png">
     <meta name="theme-color" content="#121212">
     <link rel="manifest" href="/manifest.json">
@@ -12,13 +13,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('SW registrato:', registration);
+            })
+            .catch(error => {
+              console.log('SW fallito:', error);
+            });
         });
       }
     </script>
-  </body> ```
-  </body>
+    </body>
 </html>
