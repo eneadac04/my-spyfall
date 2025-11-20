@@ -1,13 +1,24 @@
 {
   "short_name": "Mole Hunt",
-  "name": "Mole Hunt",
+  "name": "Mole Hunt - Caccia alla Talpa",
   "id": "/",
   "start_url": "/",
   "display": "standalone",
-  "scope": "/",
   "theme_color": "#121212",
   "background_color": "#121212",
   "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "/icon.png",
       "sizes": "1024x1024",
